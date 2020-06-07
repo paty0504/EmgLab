@@ -18,7 +18,7 @@
 					</div>
 					<div class="blog-post-background">
 						<h2 class="post-title">{{$service->name}}</h2>
-						<div class="post-details-meta">Thời gian <a href="#">October 17, 2012</div>
+						<div class="post-details-meta">Thời gian October 17, 2012</div>
 						<div class="blog-post-excerpt">
 							<p>{!! $service->description !!}</p>
 							

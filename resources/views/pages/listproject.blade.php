@@ -18,12 +18,14 @@
 						<a href="detailproject/{{$p->id}}"><img src="upload/project/{{$p->picture}}" class="aligncenter " alt="blog-image"></a>
 					</div>
 					<div class="blog-post-background">
+						
 						<h2 class="post-title"><a href="detailproject/{{$p->id}}">{{$p->name}} </a></h2>
-						<div class="post-details-meta">Thời gian <a href="#">October 17, 2012</a> </div>
+						<div class="post-details-meta">Thời gian October 17, 2012</a> </div>
 						<!-- <div class="blog-post-excerpt">
 							<p class="ellipsis">{!! $p->description !!}</p>
 						</div> -->
 						<p><a href="detailproject/{{$p->id}}" class="rock-button">Chi Tiết</a></p>
+						
 					</div><!-- close .blog-post-background -->
 					
 				<div class="clearfix"></div>

@@ -24,21 +24,7 @@
 				<h6 class="heading-address-widget">EMG LAB</h6>
 				<div class="address-widget">C9-419, Đại Học Bách Khoa Hà Nội, số 1 Đại Cồ Việt</div>
 				<div class="phone-widget"><span>Phone:</span> (707) 255-0211</div>
-				
-				<div class="social-icons">
-						<a class="rss" href="#" target="_blank">r</a>
-						<a class="facebook" href="http://facebook.com/" target="_blank">F</a>
-						<a class="twitter" href="https://twitter.com/Progression_S" target="_blank">t</a>
-						<a class="skype" href="http://skype.com/" target="_blank">s</a>
-						<a class="vimeo" href="http://vimeo.com/" target="_blank">v</a>
-						<a class="linkedin" href="http://linkedin.com/" target="_blank">l</a>
-						<!--a class="dribbble" href="http://dribbble.com/" target="_blank">d</a-->
-						<!--a class="forrst" href="http://forrst.com/" target="_blank">f</a-->
-						<!--a class="flickr" href="http://flickr.com" target="_blank">n</a-->
-						<!--a class="google" href="http://google.com" target="_blank">g</a-->
-						<!--a class="youtube" href="http://youtube.com" target="_blank">y</a-->
-						<div class="clearfix"></div>
-				</div><!-- close .social-icons -->
+		
 			</div>
 			
 			
