@@ -19,7 +19,7 @@
                             <tr align="center">
                                 <th>ID</th>
                                 <th>Tên</th>
-                                <th>Nội dung</th>
+                                
                                 <th>Hình</th>
                                 
                                 <th>Delete</th>
@@ -31,7 +31,7 @@
                             <tr class="even gradeC" align="center">
                                 <td>{{$c->id}}</td>
                                 <td>{{$c->name}}</td>
-                                <td>{{$c->description}}</td>
+                                
                                 <td>
                                     <img width="400px" height="300px" src="upload/course/{{$c->picture}}" alt="">
                                 </td>
