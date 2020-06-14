@@ -369,7 +369,7 @@ ul.filter-children li a {display:inline-block; }
 =============================================== 08. MENU STYLES ===============================================
 */
 .menu-spacer {width:100%; overflow:hidden; height:25px;}
-body #main ul.menu-items .grid2column {font-style:italic; font-size:16px;}
+body #main ul.menu-items .grid2column { font-size:16px;}
 body #main ul.menu-items .lastcolumn {text-align:right;}
 
 body #main ul.menu-items {margin:0px; padding:8px 0px 0px 0px; list-style:none;}
@@ -599,7 +599,7 @@ nav {position:absolute; top:0px; right:0px; z-index:4; }
 	text-shadow: none;
 	color:#000000;
 	font-size:16px;
-	font-style:italic;
+	
 }
 
 .sf-menu ul {background:#6c858a;}

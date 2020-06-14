@@ -69,7 +69,13 @@ Route::group(['prefix' => 'admin' , 'middleware'=>'adminLogin' ], function () {
         Route::get('them','ProjectController@getThem');
         Route::post('them','ProjectController@postThem');
     });
-
+    Route::group(['prefix' => 'applicant'], function () {
+        //tao route group user
+       
+        Route::get('danhsach','ApplicantController@getDanhSach');
+        Route::get('xoa/{id}','ApplicantController@getXoa');
+     
+    });
     Route::group(['prefix' => 'product'], function () {
         //tao route group user
        
@@ -89,9 +95,12 @@ Route::get('trangchu','PagesController@trangchu');
 Route::get('listproject','PagesController@listproject');
 Route::get('detailproject/{id}','PagesController@detailproject');
 Route::get('contact','PagesController@contact');
+Route::get('recruit','PagesController@recruit');
 Route::get('listproduct','PagesController@listproduct');
 Route::get('detailproduct/{id}','PagesController@detailproduct');
 Route::get('listservice','PagesController@listservice');
 Route::get('detailservice/{id}','PagesController@detailservice');
 Route::get('listcourse','PagesController@listcourse');
 Route::get('detailcourse/{id}','PagesController@detailcourse');
+Route::get('apply','PagesController@getApply');
+Route::post('apply','PagesController@postApply');

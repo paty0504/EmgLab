@@ -18,7 +18,7 @@
 						
 					</li>
 					<li>
-						<a href="listcourse">Khóa Học</a>
+						<a href="recruit">Tuyển Thành Viên</a>
 					</li>
 					<li>
 						<a href="contact">Liên Hệ</a>

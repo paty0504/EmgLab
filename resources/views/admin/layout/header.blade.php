@@ -117,6 +117,16 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
+                        <li>
+                            <a href="#"><i class="fa fa-users fa-fw"></i> Applicant<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="admin/applicant/danhsach">List </a>
+                                </li>
+                               
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
