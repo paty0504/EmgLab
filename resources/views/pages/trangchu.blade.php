@@ -1,6 +1,8 @@
 @extends('layout.index') 
   @section('content')
+  
 
+	
 	<div id="page-title" style=" margin-top: 75px">
 			<div class="flexslider" id="homepage-slider">
 				<ul class="slides">
@@ -57,7 +59,21 @@
 	
 	
 	<div id="main">
+		<div class="width-container">
+		
+		<ul style="float: right;  display: flex; list-style:none">
+			@if(Auth::check()) 
+					<li style="padding-right: 5px;" class="active"><a href="nguoidung"> {{Auth::user()->name}}  </a></li> | 
+					<li style="padding-left: 5px;" class="active"><a href="dangxuat">Đăng xuất   </a></li> 
+					@else
+					<li  style="padding-right: 5px;"><a href="dangnhap">Đăng nhập</a></li> |
+					<li style="padding-left: 5px;"><a href="dangky">Đăng ký</a></li>
+					@endif
+		</ul> 
+		<div class="clearfix"></div>
+		</div> 
         <div class="width-container">
+		
         <div class="title">Giới thiệu</div> <hr>
         <p>EMGlabvn là nhóm nghiên cứu trẻ chuyên ngành, thuộc Bộ môn Công Nghệ điện tử & Kỹ thuật Y sinh, viện Điện tử - Viễn thông, trường đại học Bách Khoa Hà Nội. Lab được thành lập bởi TS. Phạm Mạnh Hùng từ năm 2012, phát triển từ một nhánh của nhóm nghiên cứu BKFET hay . Tên gọi của EMGlabvn được lấy theo tên đối tượng nghiên cứu của luận án tiến sỹ của TS. Phạm Mạnh Hùng, là tín hiệu điện cơ đồ (Electromyography - EMG).</p>
         <p>Nhiệm vụ chính của Lab là thực hiện các đề tài/nhiệm vụ khoa học được Bộ môn - Trung tâm giao, các dự án do các thành viên đề xuất hoặc các dự án nghiên cứu do các đối tác nghiên cứu phối hợp triển khai. Thông qua việc thực hiện các đề tài, nhiệm vụ và dự án nghiên cứu, Lab đã đào tạo được các kỹ sư có năng lực nghiên cứu tốt, thực vậy trên 90% sinh viên của EMGlabvn tốt nghiệp đang làm việc tại các đơn vị nghiên cứu và phát triển công nghệ như Viettel, FPT, Samsung...</p>

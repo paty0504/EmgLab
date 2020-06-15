@@ -2,7 +2,7 @@
 @section('content')
 <div id="page-title">
 		<div class="width-container paged-title">
-			<h1>Đăng ký tham gia Lab</h1>	
+			<h1>Đăng ký</h1>	
 		</div>
 		<div id="page-title-divider"></div>
 	</div><!-- #page-title -->
@@ -21,7 +21,7 @@
                 {{session('thongbao')}}
             </div>
         @endif
-                        <form action="apply" method="POST" enctype="multipart/form-data">
+                        <form action="dangky" method="POST" enctype="multipart/form-data">
                         <input type="hidden" name="_token" value="{{csrf_token()}}">   
                             <div class="form-group">
                                 <div class="label">Họ Tên</div>
@@ -29,36 +29,14 @@
                             </div>
                             <div class="form-group">
                             <div class="label">Email</div>
-                                <input type="email" class="form-control" name="mail" placeholder="" />
+                                <input type="email" class="form-control" name="email" placeholder="" />
                             </div>
                             <div class="form-group">
-                            <div class="label">Số điện thoại</div>
-                                <input class="form-control"  name="phone" placeholder="" />
+                            <div class="label">Mật khẩu</div>
+                                <input type="password" class="form-control"  name="password" placeholder="" />
                             </div>
-                            <div class="form-group">
-                            <div class="label">Khoa-Viện</div>
-                                <select name="school" class="form-control" id="">
-                                <option value="ĐTVT">ĐTVT</option>
-                                <option value="CNTT">CNTT</option>
-                                <option value="Điện">Điện</option>
-                                <option value="Toán Ứng dụng">Toán Ứng dụng</option>
-                                </select>
-                            </div>
-                           
-                            <div class="form-group">
-                            <div class="label">Khóa</div>
-                                <select name="grade" class="form-control" id="">
-                                <option value="k61">k61</option>
-                                <option value="k62">k62</option>
-                                <option value="k63">k63</option>
-                                <option value="k64">k64</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                            <div class="label">CV (nếu có)</div>
-                            <input type="file"  name="Hinh" class="form-control"/>
-                        </div>
-                            <button type="submit" class=" btn btn-default">Gửi</button>
+                         
+                            <button type="submit" class="btn btn-default">Đăng ký</button>
                             
                         <form>
                     </div>
@@ -82,7 +60,7 @@
                         }
                         .btn{
                             width: 71px;
-                            margin-left: 45%;
+                            margin-left: 511px;
                             margin-top: 43px;
                             height: 32px;
                         }

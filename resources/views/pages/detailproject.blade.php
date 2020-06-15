@@ -23,7 +23,7 @@
 							<p>{!! $project->description !!}</p>
 							
 						</div>
-						
+						<a class="rock-button" href="lienhe/{{$project->id}}">Liên hệ</a>
 					</div><!-- close .blog-post-background -->
 					<style>
 					

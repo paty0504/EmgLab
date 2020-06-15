@@ -55,15 +55,19 @@
 				
 				<div class="grid2column lastcolumn">
 					<ul style="    padding-top: 61px;">
-						<li><a href="trangchu">Trang chủ</a></li>
-						<li><a href="listproject">Dự Án Nghiên Cứu</a></li>
-						<li><a href="">Dịch Vụ</a></li>
-						<li><a href="listproduct">Sản Phẩm</a></li>
-						<li><a href="listcourse">Khóa Học</a></li>
-						<li><a href="contact">Liên Hệ</a></li>
+						<li><a class="font-15" href="trangchu">Trang chủ</a></li>
+						<li><a class="font-15" href="listproject">Dự Án Nghiên Cứu</a></li>
+						<li><a class="font-15" href="">Dịch Vụ</a></li>
+						<li><a class="font-15" href="listproduct">Sản Phẩm</a></li>
+						<li><a class="font-15" href="recruit">Tuyển Thành Viên</a></li>
+						<li><a class="font-15" href="contact">Liên Hệ</a></li>
 					</ul>
 				</div>
-				
+				<style>
+					.font-15{
+						font-size: 15px;
+					}
+				</style>
 			<div class="clearfix"></div>
 			</div><!-- close #copyright -->
 		</div><!-- close .width-container -->

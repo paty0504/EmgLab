@@ -1,5 +1,12 @@
+
 <header>
-	<div id="header-top-bar"></div>
+
+
+	
+
+
+	
+		
 		<div class="width-container">
 			<h3 id="logo"><a href="trangchu"><img style="padding-top: 17px;" src="images/logo.png" alt="WordPress Theme" width="288"></a></h3>
 			<nav>
@@ -28,4 +35,5 @@
 		
 		<div class="clearfix"></div>
 		</div><!-- close .width-container -->
+	
 	</header>
