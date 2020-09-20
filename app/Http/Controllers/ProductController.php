@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Product;
+use App\ProductContact;
 class ProductController extends Controller
 {
     //
@@ -108,6 +109,8 @@ class ProductController extends Controller
     }
     public function getXoa($id){
         $product = Product::find($id);
+        $productcontact = ProductContact::where('idproduct',$id);
+        $productcontact->delete();
         $product->delete();
         return redirect('admin/product/danhsach')->with('thongbao','Xoa Thanh Cong');
     }

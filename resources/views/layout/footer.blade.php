@@ -11,7 +11,7 @@
 				<!-- Begin MailChimp Signup Form -->
 				<div id="mc_embed_signup">
 					
-						<label for="mce-EMAIL">hung.phammanh1@gmail.com</label>
+						<label for="mce-EMAIL">hung.phammanh@gmail.com</label>
 					
 					
 				</div>
@@ -56,10 +56,11 @@
 				<div class="grid2column lastcolumn">
 					<ul style="    padding-top: 61px;">
 						<li><a class="font-15" href="trangchu">Trang chủ</a></li>
+						<li><a class="font-15" href="listmember"> Thành Viên</a></li>
 						<li><a class="font-15" href="listproject">Dự Án Nghiên Cứu</a></li>
-						<li><a class="font-15" href="">Dịch Vụ</a></li>
+						<li><a class="font-15" href="listservice">Dịch Vụ</a></li>
 						<li><a class="font-15" href="listproduct">Sản Phẩm</a></li>
-						<li><a class="font-15" href="recruit">Tuyển Thành Viên</a></li>
+						
 						<li><a class="font-15" href="contact">Liên Hệ</a></li>
 					</ul>
 				</div>

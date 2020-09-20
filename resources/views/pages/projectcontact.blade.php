@@ -22,22 +22,28 @@
                 {{session('thongbao')}}
             </div>
         @endif
-                        <form action="lienhe/{{$project->id}}" method="POST" enctype="multipart/form-data">
+        <form action="lienhe/{{$project->id}}" method="POST" enctype="multipart/form-data">
                         <input type="hidden" name="_token" value="{{csrf_token()}}">   
-                        @if(Auth::check()) 
-					 <div class="form-group">
-                            <div class="label">Nhập lời nhắn của bạn</div>
-                                <input class="form-control"  name="comment" placeholder="" />
+                            <div class="form-group">
+                                <div class="label">Họ Tên</div>
+                                <input class="form-control" name="name" placeholder="" />
                             </div>
-                            <button type="submit" class="btn btn-default">Gửi</button>
+                            <div class="form-group">
+                            <div class="label">Email</div>
+                                <input type="email" class="form-control" name="email" placeholder="" />
+                            </div>
+                            <div class="form-group">
+                            <div class="label">Số điện thoại</div>
+                                <input class="form-control"  name="phone" placeholder="" />
+                            </div>
+                            <div class="form-group">
+                            <div class="label">Mục đích liên hệ</div>
+                               <textarea name="comment" id="" cols="86" rows="10"></textarea>
+                            </div>
+                        
+                            <button type="submit button" class=" btn  btn-secondary ml-1">Gửi</button>
                             
                         <form>
-					@else
-                    <p style="font-size: 19px;">Bạn cần đăng nhập để thực hiện chức năng này</p>
-					<a class="rock-button" href="dangnhap">Đăng nhập</a>
-					
-					@endif
-                       
                     </div>
                     <style>
                         form{
@@ -46,10 +52,10 @@
                         }
                         .label{
                             font-size: 20px;
-                            padding: 16px 0 10px 0;
+                            padding: 16px 0 1px 0;
                         }
                         input{
-                            height: 70px;
+                            height: 24px;
                             width: 50%;
                     
                         }
@@ -58,8 +64,8 @@
                             width: 25%;
                         }
                         .btn{
-                            width: 90px;
-                            margin-left: 511px;
+                            width: 71px;
+                            margin-left: 45%;
                             margin-top: 43px;
                             height: 32px;
                         }

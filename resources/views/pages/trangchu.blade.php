@@ -15,17 +15,7 @@
 						<img style="    margin: auto; " src="images/demo/emglab.jpg" style="height: 800px; object-fit: cover;
 " alt="slide">
 					</li>
-					<li>
-						<img src="images/demo/slide2.jpg" alt="slide">
-					</li>
-					<li>
-						<div class="caption-progression ">
-							<div class="width-container">
-								Create custom text captions<br>that can be customized.
-							</div>
-						</div><!-- close .caption-progression -->
-						<img src="images/demo/slide3.jpg" alt="slide">
-					</li>
+				
 				</ul>
 			</div><!-- close .flexslider -->
 			<div id="page-title-divider"></div>
@@ -59,7 +49,7 @@
 	
 	
 	<div id="main">
-		<div class="width-container">
+		<!-- <div class="width-container">
 		
 		<ul style="float: right;  display: flex; list-style:none">
 			@if(Auth::check()) 
@@ -71,7 +61,7 @@
 					@endif
 		</ul> 
 		<div class="clearfix"></div>
-		</div> 
+		</div>  -->
         <div class="width-container">
 		
         <div class="title">Giới thiệu</div> <hr>

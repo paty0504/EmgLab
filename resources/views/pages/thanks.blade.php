@@ -9,7 +9,7 @@
 	</div><!-- #page-title -->
 	<div class="clearfix"></div>
   <div  style="padding-bottom: 80px;" class="width-container detail">
-      <p class="paragraph">Cảm ơn bạn đã liên hệ, chúng tôi sẽ gửi thông báo sớm nhất tới bạn qua email {{Auth::user()->email}}</p>
+      <p class="paragraph">Cảm ơn bạn đã liên hệ, chúng tôi sẽ gửi thông báo sớm nhất tới bạn qua email {{$email}}</p>
       
 
   </div>

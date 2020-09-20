@@ -60,7 +60,7 @@
                         }
                         .btn{
                             width: 71px;
-                            margin-left: 511px;
+                            margin-left: 30%;
                             margin-top: 43px;
                             height: 32px;
                         }

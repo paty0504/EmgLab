@@ -58,7 +58,7 @@
                             <div class="label">CV (nếu có)</div>
                             <input type="file"  name="Hinh" class="form-control"/>
                         </div>
-                            <button type="submit" class=" btn btn-default">Gửi</button>
+                            <button type="submit button" class=" btn btn btn-secondary ml-1">Gửi</button>
                             
                         <form>
                     </div>

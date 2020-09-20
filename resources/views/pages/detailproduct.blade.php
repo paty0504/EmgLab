@@ -23,7 +23,7 @@
 							<p>{!! $product->description !!}</p>
 							
 						</div>
-						
+						<a class="rock-button" href="productcontact/{{$product->id}}">Liên hệ</a>
 					</div><!-- close .blog-post-background -->
 					
 				<div class="clearfix"></div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Service;
+use App\ServiceContact;
 class ServiceController extends Controller
 {
     //
@@ -108,6 +109,8 @@ class ServiceController extends Controller
     }
     public function getXoa($id){
         $service = Service::find($id);
+        $servicecontact = ServiceContact::where('idservice',$id);
+        $servicecontact->delete();
         $service->delete();
         return redirect('admin/service/danhsach')->with('thongbao','Xoa Thanh Cong');
     }

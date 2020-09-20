@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Project;
+use App\ProjectContact;
 class ProjectController extends Controller
 {
     //
@@ -108,6 +109,8 @@ class ProjectController extends Controller
     }
     public function getXoa($id){
         $project = Project::find($id);
+        $projectcontact = ProjectContact::where('idproject',$id);
+        $projectcontact->delete();
         $project->delete();
         return redirect('admin/project/danhsach')->with('thongbao','Xoa Thanh Cong');
     }

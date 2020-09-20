@@ -9,7 +9,7 @@ class Project extends Model
     //
     protected $table = "Project";
     public $timestamps = false;
-    public function userproject(){
-        return $this->hasMany('App\UserProject','idproject','id'); 
+    public function projectcontact(){
+        return $this->hasMany('App\ProjectContact','idproject','id'); 
     }
 }

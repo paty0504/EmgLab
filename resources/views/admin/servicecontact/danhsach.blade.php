@@ -5,7 +5,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Liên hệ sản phẩm
+                        <h1 class="page-header">Liên hệ sử dụng dịch vụ
                             <small>List</small>
                         </h1>
                     </div>
@@ -15,10 +15,10 @@
                         <thead>
                             <tr align="center">
                               
-                                <th>Tên Người dùng</th>
+                                <th>Tên </th>
                                 <th>Email</th>
-                               
-                                <th>Tên Project</th>
+                               <th>Số điện thoại</th>
+                                <th>Tên service</th>
                                 <th>Lời nhắn</th>
                                 
                                 <th>Delete</th>
@@ -26,18 +26,19 @@
                             </tr>
                         </thead>
                         <tbody>
-                        @foreach($userproject as $up)
+                        @foreach($servicecontact as $up)
                             <tr class="even gradeC" align="center">
-                                <td>{{$up->user->name}}</td>
-                                <td>{{$up->user->email}}</td>
-                                <td>{{$up->project->name}}</td>
+                                <td>{{$up->name}}</td>
+                                <td>{{$up->email}}</td>
+                                <td>{{$up->phone}}</td>
+                                <td>{{$up->service->name}}</td>
                                 <td>{{$up->comment}}</td>
                                
                                 
 
                                
                                 
-                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/userproject/xoa/{{$up->id}}"> Delete</a></td>
+                                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/servicecontact/xoa/{{$up->id}}"> Delete</a></td>
                                
                             </tr>
                         @endforeach

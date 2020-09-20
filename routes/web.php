@@ -76,11 +76,25 @@ Route::group(['prefix' => 'admin' , 'middleware'=>'adminLogin' ], function () {
         Route::get('xoa/{id}','ApplicantController@getXoa');
      
     });
-    Route::group(['prefix' => 'userproject'], function () {
+    Route::group(['prefix' => 'projectcontact'], function () {
         //tao route group user
        
-        Route::get('danhsach','UserProjectController@getDanhSach');
-        Route::get('xoa/{id}','UserProjectController@getXoa');
+        Route::get('danhsach','ProjectContactController@getDanhSach');
+        Route::get('xoa/{id}','ProjectContactController@getXoa');
+     
+    });
+    Route::group(['prefix' => 'servicecontact'], function () {
+        //tao route group user
+       
+        Route::get('danhsach','ServiceContactController@getDanhSach');
+        Route::get('xoa/{id}','ServiceContactController@getXoa');
+     
+    });
+    Route::group(['prefix' => 'productcontact'], function () {
+        //tao route group user
+       
+        Route::get('danhsach','ProductContactController@getDanhSach');
+        Route::get('xoa/{id}','ProductContactController@getXoa');
      
     });
     Route::group(['prefix' => 'product'], function () {
@@ -96,6 +110,19 @@ Route::group(['prefix' => 'admin' , 'middleware'=>'adminLogin' ], function () {
         Route::get('them','ProductController@getThem');
         Route::post('them','ProductController@postThem');
     });
+    Route::group(['prefix' => 'member'], function () {
+        //tao route group user
+       
+        Route::get('danhsach','MemberController@getDanhSach');
+
+        Route::get('sua/{id}','MemberController@getSua');
+        Route::post('sua/{id}','MemberController@postSua');
+       
+        Route::get('xoa/{id}','MemberController@getXoa');
+       
+        Route::get('them','MemberController@getThem');
+        Route::post('them','MemberController@postThem');
+    });
    
 });
 Route::get('trangchu','PagesController@trangchu');
@@ -104,6 +131,8 @@ Route::get('detailproject/{id}','PagesController@detailproject');
 Route::get('contact','PagesController@contact');
 Route::get('recruit','PagesController@recruit');
 Route::get('listproduct','PagesController@listproduct');
+Route::get('listmember','PagesController@listmember');
+Route::get('oldmember','PagesController@oldmember');
 Route::get('detailproduct/{id}','PagesController@detailproduct');
 Route::get('listservice','PagesController@listservice');
 Route::get('detailservice/{id}','PagesController@detailservice');
@@ -118,3 +147,7 @@ Route::get('dangky','PagesController@getDangky');
 Route::post('dangky','PagesController@postDangky');
 Route::get('lienhe/{id}','PagesController@getlienhe');
 Route::post('lienhe/{id}','PagesController@postlienhe');
+Route::get('servicecontact/{id}','PagesController@getservicecontact');
+Route::post('servicecontact/{id}','PagesController@postservicecontact');
+Route::get('productcontact/{id}','PagesController@getproductcontact');
+Route::post('productcontact/{id}','PagesController@postproductcontact');

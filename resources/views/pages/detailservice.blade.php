@@ -23,7 +23,7 @@
 							<p>{!! $service->description !!}</p>
 							
 						</div>
-						
+						<a class="rock-button" href="servicecontact/{{$service->id}}">Liên hệ</a>
 					</div><!-- close .blog-post-background -->
 					
 				<div class="clearfix"></div>

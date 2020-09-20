@@ -9,7 +9,10 @@ use App\Project;
 use App\Service;
 use App\User;
 use App\Applicant;
-use App\UserProject;
+use  App\Member;
+use App\ProjectContact;
+use App\ServiceContact;
+use App\ProductContact;
 class PagesController extends Controller
 {
     function __construct(){
@@ -49,6 +52,14 @@ class PagesController extends Controller
     function listcourse(){
         $course = Course::all();
         return view('pages.listcourse', ['course'=>$course]);
+    }
+    function listmember(){
+        $member = Member::where('current_member','=',1)->get();
+        return view('pages.listmember', ['member'=>$member]);
+    }
+    function oldmember(){
+        $member = Member::where('current_member','=',0)->get();
+        return view('pages.oldmember', ['member'=>$member]);
     }
     function detailcourse($id){
         $course = Course::find($id);
@@ -115,110 +126,191 @@ class PagesController extends Controller
           $applicant->save();
           return redirect('apply')->with('thongbao','Đăng ký thành công');
     }
-    function getDangNhap(){
-        return view('pages.dangnhap');
-    }
-    function postDangNhap(Request $request){
-        $this->validate($request,[
-            'email'=>'required',
-            'password'=>'required|min:3|max:32',
-        ],
-        [
-            'email.required' => 'bạn chưa nhập email',
-            'password.required' => 'ban chua nhap password',
-            'password.min' => 'Password co do dai tu 3 den 32 ky tu',
-            'password.max' => 'Password co do dai tu 3 den 32 ky tu',
-        ]);
-        if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){
-            return redirect('trangchu');
-        }         
-        else{
-            return redirect('dangnhap')->with('thongbao','Đăng nhập không thành công');
-        }
-    }
-    function getDangxuat(){
-        Auth::logout();
-        return redirect('trangchu');
-    }
-    function getDangky(){
-        return view('pages.dangky');
-    }
-    function postDangky(Request $request){
-        $this->validate($request,[
-            'name' => 'required|min:3',
-            'email' => 'required|email|unique:users,email',
-            'password' => 'required|min:3|max:32',
+    // function getDangNhap(){
+    //     return view('pages.dangnhap');
+    // }
+    // function postDangNhap(Request $request){
+    //     $this->validate($request,[
+    //         'email'=>'required',
+    //         'password'=>'required|min:3|max:32',
+    //     ],
+    //     [
+    //         'email.required' => 'bạn chưa nhập email',
+    //         'password.required' => 'ban chua nhap password',
+    //         'password.min' => 'Password co do dai tu 3 den 32 ky tu',
+    //         'password.max' => 'Password co do dai tu 3 den 32 ky tu',
+    //     ]);
+    //     if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){
+    //         return redirect('trangchu');
+    //     }         
+    //     else{
+    //         return redirect('dangnhap')->with('thongbao','Đăng nhập không thành công');
+    //     }
+    // }
+    // function getDangxuat(){
+    //     Auth::logout();
+    //     return redirect('trangchu');
+    // }
+    // function getDangky(){
+    //     return view('pages.dangky');
+    // }
+    // function postDangky(Request $request){
+    //     $this->validate($request,[
+    //         'name' => 'required|min:3',
+    //         'email' => 'required|email|unique:users,email',
+    //         'password' => 'required|min:3|max:32',
             
-          ],[
-            'name.required' => 'Bạn chưa nhập tên người dùng',
-            'name.min' => 'Tên người dùng phải có ít nhất 3 ký tự',
-            'email.required' => 'Bạn chưa nhập email',
-            'email.email' => 'Bạn chưa nhập đúng định dạng email',
-            'email.unique' => 'Email đã tồn tại',
-            'password.required' => 'Bạn chưa nhập mật khẩu',
-            'password.min' => 'mật khẩu phải có độ dài từ 3 đến 32 ký tự',
-            'password.max' => 'mật khẩu phải có độ dài từ 3 đến 32 ký tự',
+    //       ],[
+    //         'name.required' => 'Bạn chưa nhập tên người dùng',
+    //         'name.min' => 'Tên người dùng phải có ít nhất 3 ký tự',
+    //         'email.required' => 'Bạn chưa nhập email',
+    //         'email.email' => 'Bạn chưa nhập đúng định dạng email',
+    //         'email.unique' => 'Email đã tồn tại',
+    //         'password.required' => 'Bạn chưa nhập mật khẩu',
+    //         'password.min' => 'mật khẩu phải có độ dài từ 3 đến 32 ký tự',
+    //         'password.max' => 'mật khẩu phải có độ dài từ 3 đến 32 ký tự',
             
-          ]);
-          $user = new User;
-          $user->name = $request->name;
-          $user->email = $request->email;
-          $user->password = bcrypt($request->password);
-          $user->quyen = 0;
-          $user->save();
-          return redirect('dangnhap')->with('thongbao','Đăng ký thành công');
-    }
+    //       ]);
+    //       $user = new User;
+    //       $user->name = $request->name;
+    //       $user->email = $request->email;
+    //       $user->password = bcrypt($request->password);
+    //       $user->quyen = 0;
+    //       $user->save();
+    //       return redirect('dangnhap')->with('thongbao','Đăng ký thành công');
+    // }
 
-    function getNguoiDung(){
-        $user = Auth::user();
-        return view('pages.nguoidung',['nguoidung'=>$user]);
-    }
-    function postNguoiDung(Request $request){
-        $this->validate($request,[
-            'name' => 'required|min:3',
+    // function getNguoiDung(){
+    //     $user = Auth::user();
+    //     return view('pages.nguoidung',['nguoidung'=>$user]);
+    // }
+    // function postNguoiDung(Request $request){
+    //     $this->validate($request,[
+    //         'name' => 'required|min:3',
            
             
-          ],[
-            'name.required' => 'Bạn chưa nhập tên người dùng',
-            'name.min' => 'Tên người dùng phải có ít nhất 3 ký tự',
+    //       ],[
+    //         'name.required' => 'Bạn chưa nhập tên người dùng',
+    //         'name.min' => 'Tên người dùng phải có ít nhất 3 ký tự',
            
-          ]);
-          $user = Auth::user();
-          $user->name = $request->name;
+    //       ]);
+    //       $user = Auth::user();
+    //       $user->name = $request->name;
          
-         if($request->changePassword == "on")
-          {
-            $this->validate($request,[
+    //      if($request->changePassword == "on")
+    //       {
+    //         $this->validate($request,[
                
-                'password' => 'required|min:3|max:32',
+    //             'password' => 'required|min:3|max:32',
                
-              ],[
+    //           ],[
               
-                'password.required' => 'Bạn chưa nhập mật khẩu',
-                'password.min' => 'mật khẩu phải có độ dài từ 3 đến 32 ký tự',
-                'password.max' => 'mật khẩu phải có độ dài từ 3 đến 32 ký tự',
+    //             'password.required' => 'Bạn chưa nhập mật khẩu',
+    //             'password.min' => 'mật khẩu phải có độ dài từ 3 đến 32 ký tự',
+    //             'password.max' => 'mật khẩu phải có độ dài từ 3 đến 32 ký tự',
               
-              ]);  
-            $user->password = bcrypt($request->password);}
+    //           ]);  
+    //         $user->password = bcrypt($request->password);}
 
            
-          $user->save();
-          return redirect('nguoidung')->with('thongbao','Bạn đã sửa thành công');
-    }
+    //       $user->save();
+    //       return redirect('nguoidung')->with('thongbao','Bạn đã sửa thành công');
+    // }
     function getlienhe($id){
         $idproject = $id;
         $project = Project::find($id);
         return view('pages.projectcontact',['project'=>$project]);
     }
     function postlienhe($id, Request $request ){
+        $this->validate($request,[
+            'name' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+            'comment' => 'required',
+            
+        
+           ],
+           [
+            'name.required' => 'Bạn chưa nhập tên',
+            'email.required' => 'Hãy nhập email để chúng tôi có thể liên hệ với bạn!',
+            'phone.required' => 'Hãy nhập số điện thoại để chúng tôi có thể liên hệ với bạn!',
+            'comment.required' => 'Bạn chưa nhập mục đích liên hệ',
+            
+           ]);
         $idproject = $id;
         $project = Project::find($id);
-        $userproject = new UserProject;
-        $userproject->iduser = Auth::user()->id;
-        $userproject->idproject = $idproject;
-        $userproject->role = 0;
-        $userproject->comment = $request->comment;
-        $userproject->save();
-        return view('pages.thanks');
+        $projectcontact = new ProjectContact;
+        $projectcontact->name = $request->name;
+        $projectcontact->email = $request->email;
+        $projectcontact->idproject = $idproject;
+        $projectcontact->phone = $request->phone;
+        $projectcontact->comment = $request->comment;
+        $projectcontact->save();
+        return view('pages.thanks',['email'=>$request->email]);
+    }
+    function getservicecontact($id){
+        $idservice = $id;
+        $service = Service::find($id);
+        return view('pages.servicecontact',['service'=>$service]);
+    }
+    function postservicecontact($id, Request $request ){
+        $this->validate($request,[
+            'name' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+            'comment' => 'required',
+            
+        
+           ],
+           [
+            'name.required' => 'Bạn chưa nhập tên',
+            'email.required' => 'Hãy nhập email để chúng tôi có thể liên hệ với bạn!',
+            'phone.required' => 'Hãy nhập số điện thoại để chúng tôi có thể liên hệ với bạn!',
+            'comment.required' => 'Bạn chưa nhập mục đích liên hệ',
+            
+           ]);
+        $idservice = $id;
+        $service = Service::find($id);
+        $servicecontact = new ServiceContact;
+        $servicecontact->name = $request->name;
+        $servicecontact->email = $request->email;
+        $servicecontact->idservice = $idservice;
+        $servicecontact->phone = $request->phone;
+        $servicecontact->comment = $request->comment;
+        $servicecontact->save();
+        return view('pages.thanks',['email'=>$request->email]);
+    }
+
+    function getproductcontact($id){
+        $idproduct = $id;
+        $product = Product::find($id);
+        return view('pages.productcontact',['product'=>$product]);
+    }
+    function postproductcontact($id, Request $request ){
+        $this->validate($request,[
+            'name' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+            'comment' => 'required',
+            
+        
+           ],
+           [
+            'name.required' => 'Bạn chưa nhập tên',
+            'email.required' => 'Hãy nhập email để chúng tôi có thể liên hệ với bạn!',
+            'phone.required' => 'Hãy nhập số điện thoại để chúng tôi có thể liên hệ với bạn!',
+            'comment.required' => 'Bạn chưa nhập mục đích liên hệ',
+            
+           ]);
+        $idproduct = $id;
+        $product = Product::find($id);
+        $productcontact = new ProductContact;
+        $productcontact->name = $request->name;
+        $productcontact->email = $request->email;
+        $productcontact->idproduct = $idproduct;
+        $productcontact->phone = $request->phone;
+        $productcontact->comment = $request->comment;
+        $productcontact->save();
+        return view('pages.thanks',['email'=>$request->email]);
     }
 }
